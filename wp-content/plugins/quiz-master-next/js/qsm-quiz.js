@@ -1098,10 +1098,12 @@ function check_if_show_start_quiz_button(container, total_pages, page_number) {
 		}
 
 		// 9. Auto Scroll to Flashcard on Start
-		if ( 768 >=window.innerWidth ) {
-			jQuery( 'html, body' ).animate( {
-				scrollTop: jQuery( "#primary .qsm-quiz-container" ).offset().top
-			}, 'slow' );
+		if ( window.innerWidth <= 768 ) {
+			const $target = jQuery( "#primary .qsm-quiz-container" );
+
+			jQuery( 'html, body' ).stop( true, true ).animate( {
+				scrollTop: $target.offset().top
+			}, 'fast' );
 		}
 
 		// 10. Avoid Cutting Words in Front Question -  Text Overflow Handling
