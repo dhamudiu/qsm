@@ -1096,6 +1096,26 @@ function check_if_show_start_quiz_button(container, total_pages, page_number) {
 				container.find(".mlw_custom_next").hide();
 			}
 		}
+
+		// 9. Auto Scroll to Flashcard on Start
+		jQuery( 'html, body' ).animate( {
+			scrollTop: jQuery( "#primary .qsm-quiz-container" ).offset().top
+		}, 'slow' );
+
+		// 10. Avoid Cutting Words in Front Question -  Text Overflow Handling
+		function autoResizeText(el) {
+			const parentWidth = el.parentElement.offsetWidth;
+			let fontSize      = parseInt(window.getComputedStyle(el).fontSize, 10);
+		
+			while (el.scrollWidth > parentWidth && fontSize > 18) {
+				fontSize         -= 2;
+				el.style.fontSize = fontSize + 'px';
+			}
+		}
+		
+		const paragraphs = document.querySelectorAll('.card_questiontype .front_questiontype p');
+		
+		paragraphs.forEach(autoResizeText);
 	}
 }
 
