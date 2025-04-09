@@ -1078,6 +1078,17 @@ function qmnValidatePage(quiz_form_id) {
 	return result;
 }
 
+var isAutoScrolling = false;
+
+[ 'wheel', 'touchstart' ].forEach( eventType => {
+	window.addEventListener( eventType, function () {
+		if ( isAutoScrolling ) {
+			jQuery( 'html, body' ).stop( true );
+			isAutoScrolling = false;
+		}
+	}, { passive: true } );
+} );
+
 // Show start quiz button if first page is visible
 function check_if_show_start_quiz_button(container, total_pages, page_number) {
 	if(container.find('.quiz_begin').is(':visible')){
@@ -1098,12 +1109,17 @@ function check_if_show_start_quiz_button(container, total_pages, page_number) {
 		}
 
 		// 9. Auto Scroll to Flashcard on Start
-		if ( window.innerWidth <= 768 ) {
+		if ( 768 >= window.innerWidth ) {
 			const $target = jQuery( "#primary .qsm-quiz-container" );
+			isAutoScrolling = true;
 
-			jQuery( 'html, body' ).stop( true, true ).animate( {
-				scrollTop: $target.offset().top
-			}, 'fast' );
+			jQuery( 'html, body' )
+				.stop( true, true )
+				.animate( {
+					scrollTop: $target.offset().top
+				}, 'fast', function () {
+					isAutoScrolling = false;
+				} );
 		}
 
 		// 10. Avoid Cutting Words in Front Question -  Text Overflow Handling
