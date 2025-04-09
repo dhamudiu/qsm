@@ -1333,3 +1333,127 @@ div .quiz_theme_qsm-theme-pool.qsm-quiz-container .qsm-question-wrapper .qmn_rad
 .rtl .qsm-quiz-container.quiz_theme_qsm-theme-pool .quiz_section .mlw_qmn_new_question {
 	display: inline;
 }
+
+/* Custom CSS by https://dev2306.thedevsdiary.xyz */
+.quiz_theme_qsm-theme-pool .qsm-auto-page-row div.quiz_section {
+	padding-left: 0px;
+}
+
+/* 2. Remove Scrollbars */
+.flip-container.richclasstype {
+	overflow: unset;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* 1. Toggle Problem on iOS/Safari */
+.flip-container.richclasstype .scrollable {
+	max-height: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: 20px;
+}
+
+.flip-container.richclasstype .back_questiontype {
+	height: calc(100% + 5px);
+	padding: 0px;
+	margin: 0px;
+}
+
+/* 3. Progress Bar Alignment (Mobile Only) */
+@media screen and (max-width: 649px) {
+	.quiz_theme_qsm-theme-pool .qsm_theme_pool_header .pool_progress_bar div.indicator-holder {
+		width: 100%;
+	}
+
+	/* hide progress bar text */
+	.quiz_theme_qsm-theme-pool .qsm_theme_pool_header .pool_progress_bar div.indicator-holder .qsm-progress-bar .progressbar-text {
+		display: none;
+	}
+
+	.quiz_theme_qsm-theme-pool .qsm-auto-page-row div.quiz_section {
+		padding-left: 20px;
+	}
+}
+
+/* 4. Previous Button Alignment */
+div.qmn_quiz_container .qmn_pagination {
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	padding-left: 25px;
+	padding-right: 21px;
+}
+
+@media screen and (max-width: 649px) {
+	div.qmn_quiz_container .qmn_pagination {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+.quiz_theme_qsm-theme-pool.qmn_quiz_container .qmn_pagination a.qmn_btn.mlw_previous,
+.quiz_theme_qsm-theme-pool.qmn_quiz_container .qmn_pagination a.qmn_btn.mlw_next:not(.mlw_custom_start) {
+	margin: 0px;
+}
+
+.quiz_theme_qsm-theme-pool.qmn_quiz_container .qmn_pagination a.qmn_btn.mlw_previous {
+	margin-left: -25px;
+}
+
+/* 6. Move ‘X’ and ‘V’ Buttons (Red & Green) */
+.back_questiontype .buttonsdiv {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 99999;
+}
+
+.back_questiontype .buttonsdiv .hidediv {
+	position: unset;
+}
+
+.back_questiontype .buttonsdiv .incorrectdiv,
+.back_questiontype .buttonsdiv .correctdiv {
+	position: unset;
+	margin: 0px 0px 0px 10px;
+}
+
+.back_questiontype .buttonsdiv .incorrectdiv {
+	margin-left: auto;
+}
+
+/* 7. Black Square on Tap (Mobile Only) */
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next,
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous:focus,
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous:active,
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next:focus,
+.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next:active {
+	background-color: transparent;
+	outline: none;
+	box-shadow: none;
+}
+
+/* 8. Result Page Cleanup: Reduce Gaps */
+.qmn_question_answer p,
+.qmn_question_answer ul {
+	margin-bottom: 15px;
+	line-height: 1.8;
+}
+
+.quiz_theme_qsm-theme-pool .qsm-results-page .qmn_question_answer.qsm-add-border-bottom {
+	padding-bottom: 0px;
+}
+
+/* 10. Avoid Cutting Words in Front Question */
+.card_questiontype .front_questiontype p {
+	word-break: normal;
+}
