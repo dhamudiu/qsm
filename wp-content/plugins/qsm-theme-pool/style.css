@@ -1425,18 +1425,18 @@ div.qmn_quiz_container .qmn_pagination {
 }
 
 /* 7. Black Square on Tap (Mobile Only) */
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next,
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous {
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_next,
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_previous {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
 }
 
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous:focus,
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_previous:active,
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next:focus,
-.quiz_theme_qsm-theme-pool.qsm-quiz-container-336 .qmn_btn.mlw_next:active {
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_previous:focus,
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_previous:active,
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_next:focus,
+.quiz_theme_qsm-theme-pool .qmn_btn.mlw_next:active {
 	background-color: transparent;
 	outline: none;
 	box-shadow: none;
