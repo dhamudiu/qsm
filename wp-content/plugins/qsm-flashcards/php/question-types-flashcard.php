@@ -149,7 +149,11 @@ function qsm_flash_card_display( $id, $question, $answers ) {
 		<div class="flip-container <?php echo $classtype; ?>">
 		<div  class = "card_questiontype flipper">
 			<div class="front_questiontype"><?php echo wpautop( htmlspecialchars_decode( do_shortcode($ans[0]), ENT_QUOTES ) ); ?></div>
-			<div class="back_questiontype"><?php echo wpautop( htmlspecialchars_decode( do_shortcode($answer1), ENT_QUOTES ) ); ?></div>
+			<div class="back_questiontype">
+				<div class="scrollable">
+					<?php echo wpautop( htmlspecialchars_decode( do_shortcode($answer1), ENT_QUOTES ) ); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 		<?php
